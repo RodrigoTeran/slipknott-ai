@@ -1,0 +1,10 @@
+{
+    "title":"0889dcfb_22138fad",
+    "projectsRoot":".",
+    "output":"../../../generated/bplag/version_1/trace/0889dcfb_22138fad",
+    "globalLibraries":[
+        "../../../resources/bplag/rt.jar"
+    ],
+    "maxRecursiveCalls":2,
+    "maxLoopExecutions":3
+}

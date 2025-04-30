@@ -1,0 +1,10 @@
+{
+    "title":"51151974_c23278ec",
+    "projectsRoot":".",
+    "output":"../../../generated/bplag/version_1/trace/51151974_c23278ec",
+    "globalLibraries":[
+        "../../../resources/bplag/rt.jar"
+    ],
+    "maxRecursiveCalls":2,
+    "maxLoopExecutions":3
+}

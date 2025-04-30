@@ -1,0 +1,10 @@
+{
+    "title":"a7894e0b_fadc1365",
+    "projectsRoot":".",
+    "output":"../../../generated/bplag/version_1/trace/a7894e0b_fadc1365",
+    "globalLibraries":[
+        "../../../resources/bplag/rt.jar"
+    ],
+    "maxRecursiveCalls":2,
+    "maxLoopExecutions":3
+}

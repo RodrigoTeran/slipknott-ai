@@ -1,0 +1,10 @@
+{
+    "title":"c48673a6_ebed1250",
+    "projectsRoot":".",
+    "output":"../../../generated/bplag/version_1/trace/c48673a6_ebed1250",
+    "globalLibraries":[
+        "../../../resources/bplag/rt.jar"
+    ],
+    "maxRecursiveCalls":2,
+    "maxLoopExecutions":3
+}

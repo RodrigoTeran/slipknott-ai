@@ -1,0 +1,11 @@
+{
+    "title":"bd3051e3_e2e37533",
+    "projectsRoot":".",
+    "output":"../../../generated/bplag/version_2/trace/bd3051e3_e2e37533",
+    "globalLibraries":[
+        "../../../resources/bplag/rt.jar",
+        "../../../resources/bplag/utils.jar"
+    ],
+    "maxRecursiveCalls":2,
+    "maxLoopExecutions":3
+}

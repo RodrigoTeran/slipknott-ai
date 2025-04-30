@@ -1,0 +1,11 @@
+{
+    "title":"c57a973e_fa484fdd",
+    "projectsRoot":".",
+    "output":"../../../generated/bplag/version_2/trace/c57a973e_fa484fdd",
+    "globalLibraries":[
+        "../../../resources/bplag/rt.jar",
+        "../../../resources/bplag/utils.jar"
+    ],
+    "maxRecursiveCalls":2,
+    "maxLoopExecutions":3
+}

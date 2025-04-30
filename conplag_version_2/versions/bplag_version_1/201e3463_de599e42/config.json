@@ -1,0 +1,10 @@
+{
+    "title":"201e3463_de599e42",
+    "projectsRoot":".",
+    "output":"../../../generated/bplag/version_1/trace/201e3463_de599e42",
+    "globalLibraries":[
+        "../../../resources/bplag/rt.jar"
+    ],
+    "maxRecursiveCalls":2,
+    "maxLoopExecutions":3
+}

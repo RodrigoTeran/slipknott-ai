@@ -1,0 +1,10 @@
+{
+    "title":"b2001d68_ba468e1f",
+    "projectsRoot":".",
+    "output":"../../../generated/bplag/version_1/trace/b2001d68_ba468e1f",
+    "globalLibraries":[
+        "../../../resources/bplag/rt.jar"
+    ],
+    "maxRecursiveCalls":2,
+    "maxLoopExecutions":3
+}

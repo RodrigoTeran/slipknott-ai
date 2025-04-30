@@ -1,0 +1,10 @@
+{
+    "title":"24044589_e435b1ac",
+    "projectsRoot":".",
+    "output":"../../../generated/bplag/version_1/trace/24044589_e435b1ac",
+    "globalLibraries":[
+        "../../../resources/bplag/rt.jar"
+    ],
+    "maxRecursiveCalls":2,
+    "maxLoopExecutions":3
+}

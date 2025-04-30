@@ -1,0 +1,10 @@
+{
+    "title":"ba8800f5_d8e4eb5e",
+    "projectsRoot":".",
+    "output":"../../../generated/bplag/version_1/trace/ba8800f5_d8e4eb5e",
+    "globalLibraries":[
+        "../../../resources/bplag/rt.jar"
+    ],
+    "maxRecursiveCalls":2,
+    "maxLoopExecutions":3
+}

@@ -1,0 +1,11 @@
+{
+    "title":"9862c742_cf27732e",
+    "projectsRoot":".",
+    "output":"../../../generated/bplag/version_2/trace/9862c742_cf27732e",
+    "globalLibraries":[
+        "../../../resources/bplag/rt.jar",
+        "../../../resources/bplag/utils.jar"
+    ],
+    "maxRecursiveCalls":2,
+    "maxLoopExecutions":3
+}

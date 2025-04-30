@@ -1,0 +1,11 @@
+{
+    "title":"a101df86_dffa45ac",
+    "projectsRoot":".",
+    "output":"../../../generated/bplag/version_2/trace/a101df86_dffa45ac",
+    "globalLibraries":[
+        "../../../resources/bplag/rt.jar",
+        "../../../resources/bplag/utils.jar"
+    ],
+    "maxRecursiveCalls":2,
+    "maxLoopExecutions":3
+}

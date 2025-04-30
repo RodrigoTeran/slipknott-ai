@@ -1,0 +1,10 @@
+{
+    "title":"0c9d4def_f665e87b",
+    "projectsRoot":".",
+    "output":"../../../generated/bplag/version_1/trace/0c9d4def_f665e87b",
+    "globalLibraries":[
+        "../../../resources/bplag/rt.jar"
+    ],
+    "maxRecursiveCalls":2,
+    "maxLoopExecutions":3
+}

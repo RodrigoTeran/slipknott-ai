@@ -1,0 +1,11 @@
+{
+    "title":"120878da_ac180326",
+    "projectsRoot":".",
+    "output":"../../../generated/bplag/version_2/trace/120878da_ac180326",
+    "globalLibraries":[
+        "../../../resources/bplag/rt.jar",
+        "../../../resources/bplag/utils.jar"
+    ],
+    "maxRecursiveCalls":2,
+    "maxLoopExecutions":3
+}

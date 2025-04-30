@@ -1,0 +1,10 @@
+{
+    "title":"161b4a40_49e94e7e",
+    "projectsRoot":".",
+    "output":"../../../generated/bplag/version_1/trace/161b4a40_49e94e7e",
+    "globalLibraries":[
+        "../../../resources/bplag/rt.jar"
+    ],
+    "maxRecursiveCalls":2,
+    "maxLoopExecutions":3
+}

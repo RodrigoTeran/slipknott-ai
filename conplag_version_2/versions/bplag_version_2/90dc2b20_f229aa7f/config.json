@@ -1,0 +1,11 @@
+{
+    "title":"90dc2b20_f229aa7f",
+    "projectsRoot":".",
+    "output":"../../../generated/bplag/version_2/trace/90dc2b20_f229aa7f",
+    "globalLibraries":[
+        "../../../resources/bplag/rt.jar",
+        "../../../resources/bplag/utils.jar"
+    ],
+    "maxRecursiveCalls":2,
+    "maxLoopExecutions":3
+}

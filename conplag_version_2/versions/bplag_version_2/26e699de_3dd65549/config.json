@@ -1,0 +1,11 @@
+{
+    "title":"26e699de_3dd65549",
+    "projectsRoot":".",
+    "output":"../../../generated/bplag/version_2/trace/26e699de_3dd65549",
+    "globalLibraries":[
+        "../../../resources/bplag/rt.jar",
+        "../../../resources/bplag/utils.jar"
+    ],
+    "maxRecursiveCalls":2,
+    "maxLoopExecutions":3
+}

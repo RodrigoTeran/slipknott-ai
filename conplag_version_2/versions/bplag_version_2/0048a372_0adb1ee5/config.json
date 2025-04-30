@@ -1,0 +1,11 @@
+{
+    "title":"0048a372_0adb1ee5",
+    "projectsRoot":".",
+    "output":"../../../generated/bplag/version_2/trace/0048a372_0adb1ee5",
+    "globalLibraries":[
+        "../../../resources/bplag/rt.jar",
+        "../../../resources/bplag/utils.jar"
+    ],
+    "maxRecursiveCalls":2,
+    "maxLoopExecutions":3
+}

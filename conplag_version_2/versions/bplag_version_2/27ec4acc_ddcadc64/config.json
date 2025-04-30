@@ -1,0 +1,11 @@
+{
+    "title":"27ec4acc_ddcadc64",
+    "projectsRoot":".",
+    "output":"../../../generated/bplag/version_2/trace/27ec4acc_ddcadc64",
+    "globalLibraries":[
+        "../../../resources/bplag/rt.jar",
+        "../../../resources/bplag/utils.jar"
+    ],
+    "maxRecursiveCalls":2,
+    "maxLoopExecutions":3
+}

@@ -1,0 +1,11 @@
+{
+    "title":"d1cd194e_dbffab11",
+    "projectsRoot":".",
+    "output":"../../../generated/bplag/version_2/trace/d1cd194e_dbffab11",
+    "globalLibraries":[
+        "../../../resources/bplag/rt.jar",
+        "../../../resources/bplag/utils.jar"
+    ],
+    "maxRecursiveCalls":2,
+    "maxLoopExecutions":3
+}

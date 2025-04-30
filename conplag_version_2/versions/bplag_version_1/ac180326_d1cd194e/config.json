@@ -1,0 +1,10 @@
+{
+    "title":"ac180326_d1cd194e",
+    "projectsRoot":".",
+    "output":"../../../generated/bplag/version_1/trace/ac180326_d1cd194e",
+    "globalLibraries":[
+        "../../../resources/bplag/rt.jar"
+    ],
+    "maxRecursiveCalls":2,
+    "maxLoopExecutions":3
+}

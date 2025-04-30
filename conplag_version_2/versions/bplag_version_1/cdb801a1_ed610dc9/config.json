@@ -1,0 +1,10 @@
+{
+    "title":"cdb801a1_ed610dc9",
+    "projectsRoot":".",
+    "output":"../../../generated/bplag/version_1/trace/cdb801a1_ed610dc9",
+    "globalLibraries":[
+        "../../../resources/bplag/rt.jar"
+    ],
+    "maxRecursiveCalls":2,
+    "maxLoopExecutions":3
+}

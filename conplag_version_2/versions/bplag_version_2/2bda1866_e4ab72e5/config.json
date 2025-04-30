@@ -1,0 +1,11 @@
+{
+    "title":"2bda1866_e4ab72e5",
+    "projectsRoot":".",
+    "output":"../../../generated/bplag/version_2/trace/2bda1866_e4ab72e5",
+    "globalLibraries":[
+        "../../../resources/bplag/rt.jar",
+        "../../../resources/bplag/utils.jar"
+    ],
+    "maxRecursiveCalls":2,
+    "maxLoopExecutions":3
+}

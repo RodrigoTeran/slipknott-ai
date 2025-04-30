@@ -1,0 +1,11 @@
+{
+    "title":"51cc7026_e81b2d16",
+    "projectsRoot":".",
+    "output":"../../../generated/bplag/version_2/trace/51cc7026_e81b2d16",
+    "globalLibraries":[
+        "../../../resources/bplag/rt.jar",
+        "../../../resources/bplag/utils.jar"
+    ],
+    "maxRecursiveCalls":2,
+    "maxLoopExecutions":3
+}

@@ -1,0 +1,10 @@
+{
+    "title":"5db541bd_5e3089fa",
+    "projectsRoot":".",
+    "output":"../../../generated/bplag/version_1/trace/5db541bd_5e3089fa",
+    "globalLibraries":[
+        "../../../resources/bplag/rt.jar"
+    ],
+    "maxRecursiveCalls":2,
+    "maxLoopExecutions":3
+}

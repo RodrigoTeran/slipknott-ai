@@ -1,0 +1,11 @@
+{
+    "title":"80881cae_ad4c7a20",
+    "projectsRoot":".",
+    "output":"../../../generated/bplag/version_2/trace/80881cae_ad4c7a20",
+    "globalLibraries":[
+        "../../../resources/bplag/rt.jar",
+        "../../../resources/bplag/utils.jar"
+    ],
+    "maxRecursiveCalls":2,
+    "maxLoopExecutions":3
+}

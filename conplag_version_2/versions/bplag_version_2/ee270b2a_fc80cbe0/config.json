@@ -1,0 +1,11 @@
+{
+    "title":"ee270b2a_fc80cbe0",
+    "projectsRoot":".",
+    "output":"../../../generated/bplag/version_2/trace/ee270b2a_fc80cbe0",
+    "globalLibraries":[
+        "../../../resources/bplag/rt.jar",
+        "../../../resources/bplag/utils.jar"
+    ],
+    "maxRecursiveCalls":2,
+    "maxLoopExecutions":3
+}

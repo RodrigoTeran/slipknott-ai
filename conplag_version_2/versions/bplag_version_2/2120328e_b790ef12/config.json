@@ -1,0 +1,11 @@
+{
+    "title":"2120328e_b790ef12",
+    "projectsRoot":".",
+    "output":"../../../generated/bplag/version_2/trace/2120328e_b790ef12",
+    "globalLibraries":[
+        "../../../resources/bplag/rt.jar",
+        "../../../resources/bplag/utils.jar"
+    ],
+    "maxRecursiveCalls":2,
+    "maxLoopExecutions":3
+}

@@ -1,0 +1,11 @@
+{
+    "title":"80e6c4db_f22a4243",
+    "projectsRoot":".",
+    "output":"../../../generated/bplag/version_2/trace/80e6c4db_f22a4243",
+    "globalLibraries":[
+        "../../../resources/bplag/rt.jar",
+        "../../../resources/bplag/utils.jar"
+    ],
+    "maxRecursiveCalls":2,
+    "maxLoopExecutions":3
+}

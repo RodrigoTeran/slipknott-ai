@@ -1,0 +1,10 @@
+{
+    "title":"1adac634_ad4c7a20",
+    "projectsRoot":".",
+    "output":"../../../generated/bplag/version_1/trace/1adac634_ad4c7a20",
+    "globalLibraries":[
+        "../../../resources/bplag/rt.jar"
+    ],
+    "maxRecursiveCalls":2,
+    "maxLoopExecutions":3
+}

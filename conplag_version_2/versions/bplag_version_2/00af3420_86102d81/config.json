@@ -1,0 +1,11 @@
+{
+    "title":"00af3420_86102d81",
+    "projectsRoot":".",
+    "output":"../../../generated/bplag/version_2/trace/00af3420_86102d81",
+    "globalLibraries":[
+        "../../../resources/bplag/rt.jar",
+        "../../../resources/bplag/utils.jar"
+    ],
+    "maxRecursiveCalls":2,
+    "maxLoopExecutions":3
+}

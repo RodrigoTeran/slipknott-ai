@@ -1,0 +1,11 @@
+{
+    "title":"ac2dfc53_c4187a0e",
+    "projectsRoot":".",
+    "output":"../../../generated/bplag/version_2/trace/ac2dfc53_c4187a0e",
+    "globalLibraries":[
+        "../../../resources/bplag/rt.jar",
+        "../../../resources/bplag/utils.jar"
+    ],
+    "maxRecursiveCalls":2,
+    "maxLoopExecutions":3
+}

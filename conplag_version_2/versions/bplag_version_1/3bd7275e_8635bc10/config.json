@@ -1,0 +1,10 @@
+{
+    "title":"3bd7275e_8635bc10",
+    "projectsRoot":".",
+    "output":"../../../generated/bplag/version_1/trace/3bd7275e_8635bc10",
+    "globalLibraries":[
+        "../../../resources/bplag/rt.jar"
+    ],
+    "maxRecursiveCalls":2,
+    "maxLoopExecutions":3
+}

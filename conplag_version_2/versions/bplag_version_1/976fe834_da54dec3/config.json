@@ -1,0 +1,10 @@
+{
+    "title":"976fe834_da54dec3",
+    "projectsRoot":".",
+    "output":"../../../generated/bplag/version_1/trace/976fe834_da54dec3",
+    "globalLibraries":[
+        "../../../resources/bplag/rt.jar"
+    ],
+    "maxRecursiveCalls":2,
+    "maxLoopExecutions":3
+}

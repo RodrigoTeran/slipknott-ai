@@ -1,0 +1,11 @@
+{
+    "title":"810cf242_968c1e7e",
+    "projectsRoot":".",
+    "output":"../../../generated/bplag/version_2/trace/810cf242_968c1e7e",
+    "globalLibraries":[
+        "../../../resources/bplag/rt.jar",
+        "../../../resources/bplag/utils.jar"
+    ],
+    "maxRecursiveCalls":2,
+    "maxLoopExecutions":3
+}

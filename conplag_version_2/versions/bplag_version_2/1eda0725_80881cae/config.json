@@ -1,0 +1,11 @@
+{
+    "title":"1eda0725_80881cae",
+    "projectsRoot":".",
+    "output":"../../../generated/bplag/version_2/trace/1eda0725_80881cae",
+    "globalLibraries":[
+        "../../../resources/bplag/rt.jar",
+        "../../../resources/bplag/utils.jar"
+    ],
+    "maxRecursiveCalls":2,
+    "maxLoopExecutions":3
+}

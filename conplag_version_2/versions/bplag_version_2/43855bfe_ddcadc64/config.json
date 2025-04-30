@@ -1,0 +1,11 @@
+{
+    "title":"43855bfe_ddcadc64",
+    "projectsRoot":".",
+    "output":"../../../generated/bplag/version_2/trace/43855bfe_ddcadc64",
+    "globalLibraries":[
+        "../../../resources/bplag/rt.jar",
+        "../../../resources/bplag/utils.jar"
+    ],
+    "maxRecursiveCalls":2,
+    "maxLoopExecutions":3
+}

@@ -1,0 +1,10 @@
+{
+    "title":"18e2441c_43b10dec",
+    "projectsRoot":".",
+    "output":"../../../generated/bplag/version_1/trace/18e2441c_43b10dec",
+    "globalLibraries":[
+        "../../../resources/bplag/rt.jar"
+    ],
+    "maxRecursiveCalls":2,
+    "maxLoopExecutions":3
+}

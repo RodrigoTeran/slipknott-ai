@@ -1,0 +1,11 @@
+{
+    "title":"6f02c6d9_c2242c42",
+    "projectsRoot":".",
+    "output":"../../../generated/bplag/version_2/trace/6f02c6d9_c2242c42",
+    "globalLibraries":[
+        "../../../resources/bplag/rt.jar",
+        "../../../resources/bplag/utils.jar"
+    ],
+    "maxRecursiveCalls":2,
+    "maxLoopExecutions":3
+}

@@ -1,0 +1,10 @@
+{
+    "title":"646b3abc_8261bd1c",
+    "projectsRoot":".",
+    "output":"../../../generated/bplag/version_1/trace/646b3abc_8261bd1c",
+    "globalLibraries":[
+        "../../../resources/bplag/rt.jar"
+    ],
+    "maxRecursiveCalls":2,
+    "maxLoopExecutions":3
+}

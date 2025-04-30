@@ -1,0 +1,10 @@
+{
+    "title":"2470b521_2da4b3fe",
+    "projectsRoot":".",
+    "output":"../../../generated/bplag/version_1/trace/2470b521_2da4b3fe",
+    "globalLibraries":[
+        "../../../resources/bplag/rt.jar"
+    ],
+    "maxRecursiveCalls":2,
+    "maxLoopExecutions":3
+}

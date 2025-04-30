@@ -1,0 +1,10 @@
+{
+    "title":"aa8091b0_ac180326",
+    "projectsRoot":".",
+    "output":"../../../generated/bplag/version_1/trace/aa8091b0_ac180326",
+    "globalLibraries":[
+        "../../../resources/bplag/rt.jar"
+    ],
+    "maxRecursiveCalls":2,
+    "maxLoopExecutions":3
+}

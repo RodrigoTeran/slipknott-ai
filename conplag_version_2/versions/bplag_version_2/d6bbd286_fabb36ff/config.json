@@ -1,0 +1,11 @@
+{
+    "title":"d6bbd286_fabb36ff",
+    "projectsRoot":".",
+    "output":"../../../generated/bplag/version_2/trace/d6bbd286_fabb36ff",
+    "globalLibraries":[
+        "../../../resources/bplag/rt.jar",
+        "../../../resources/bplag/utils.jar"
+    ],
+    "maxRecursiveCalls":2,
+    "maxLoopExecutions":3
+}

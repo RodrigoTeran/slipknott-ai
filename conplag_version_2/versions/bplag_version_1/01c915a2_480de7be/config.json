@@ -1,0 +1,10 @@
+{
+    "title":"01c915a2_480de7be",
+    "projectsRoot":".",
+    "output":"../../../generated/bplag/version_1/trace/01c915a2_480de7be",
+    "globalLibraries":[
+        "../../../resources/bplag/rt.jar"
+    ],
+    "maxRecursiveCalls":2,
+    "maxLoopExecutions":3
+}

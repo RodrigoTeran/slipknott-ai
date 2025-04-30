@@ -1,0 +1,10 @@
+{
+    "title":"016510dc_f1540246",
+    "projectsRoot":".",
+    "output":"../../../generated/bplag/version_1/trace/016510dc_f1540246",
+    "globalLibraries":[
+        "../../../resources/bplag/rt.jar"
+    ],
+    "maxRecursiveCalls":2,
+    "maxLoopExecutions":3
+}

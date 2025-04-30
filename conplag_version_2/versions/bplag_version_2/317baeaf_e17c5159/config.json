@@ -1,0 +1,11 @@
+{
+    "title":"317baeaf_e17c5159",
+    "projectsRoot":".",
+    "output":"../../../generated/bplag/version_2/trace/317baeaf_e17c5159",
+    "globalLibraries":[
+        "../../../resources/bplag/rt.jar",
+        "../../../resources/bplag/utils.jar"
+    ],
+    "maxRecursiveCalls":2,
+    "maxLoopExecutions":3
+}

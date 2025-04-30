@@ -1,0 +1,10 @@
+{
+    "title":"8f31b279_d2f74dfc",
+    "projectsRoot":".",
+    "output":"../../../generated/bplag/version_1/trace/8f31b279_d2f74dfc",
+    "globalLibraries":[
+        "../../../resources/bplag/rt.jar"
+    ],
+    "maxRecursiveCalls":2,
+    "maxLoopExecutions":3
+}
