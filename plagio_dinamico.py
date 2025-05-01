@@ -8,7 +8,7 @@ from sklearn.model_selection import train_test_split, learning_curve
 from sklearn.metrics import classification_report, confusion_matrix, ConfusionMatrixDisplay
 
 # === CONFIGURACIÓN ===
-BASE_DIR = r"C:\Users\dafne\OneDrive\Documentos\GitHub\slipknott-ai\conplag_version_2"
+BASE_DIR = r"conplag_version_2"
 LABELS_PATH = os.path.join(BASE_DIR, "versions", "labels.csv")
 VERSIONS_DIR = os.path.join(BASE_DIR, "versions", "version_2")
 INPUT_EXAMPLE = "1\n1\na\n"
