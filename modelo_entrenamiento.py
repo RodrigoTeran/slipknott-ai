@@ -29,42 +29,40 @@ test_df = pd.merge(test_ids, labels_df, on=["sub1", "sub2"])
 
 def load_code(s1, s2):
     folder = f"{s1}_{s2}"
-    # Intentar con Java primero
-    path1 = os.path.join(VERSIONS_DIR, folder, f"{s1}.java")
-    path2 = os.path.join(VERSIONS_DIR, folder, f"{s2}.java")
+    # Intentar con diferentes extensiones en orden
+    extensions = ['.java', '.py', '.cpp', '.cc', '.cxx']
     
-    # Si no existe, intentar con Python
-    if not os.path.exists(path1):
-        path1 = os.path.join(VERSIONS_DIR, folder, f"{s1}.py")
-        path2 = os.path.join(VERSIONS_DIR, folder, f"{s2}.py")
-    
-    try:
-        with open(path1, "r", encoding="utf-8") as f1, open(path2, "r", encoding="utf-8") as f2:
-            return f1.read(), f2.read()
-    except:
-        return "", ""
+    for ext in extensions:
+        path1 = os.path.join(VERSIONS_DIR, folder, f"{s1}{ext}")
+        path2 = os.path.join(VERSIONS_DIR, folder, f"{s2}{ext}")
+        if os.path.exists(path1) and os.path.exists(path2):
+            try:
+                with open(path1, "r", encoding="utf-8") as f1, open(path2, "r", encoding="utf-8") as f2:
+                    return f1.read(), f2.read()
+            except:
+                continue
+    return "", ""
 
 def simple_tokenizer(code):
-    # Tokenizador simplificado y robusto para Java y Python
+    # Tokenizador para Java, Python y C++
     tokens = []
     code = code.replace('\r\n', '\n').replace('\r', '\n')
     
-    # Patrón corregido y simplificado
+    # Patrón mejorado para los tres lenguajes
     pattern = r'''
-        \b\w+\b|                # Palabras
-        [][{}()<>.,;:=+*/-]|    # Símbolos
-        \n|                     # Saltos de línea
-        "(?:\\.|[^"\\])*"|      # Strings con comillas dobles
-        '(?:\\.|[^'\\])*'|      # Strings con comillas simples
-        \#.*|                   # Comentarios Python
-        //.*|                   # Comentarios Java (una línea)
-        /\*.*?\*/               # Comentarios Java (multilínea)
+        \b\w+\b|                     # Palabras clave e identificadores
+        [][{}()<>.,;:=+*/-]|         # Símbolos
+        \n|                          # Saltos de línea
+        "(?:\\.|[^"\\])*"|           # Strings con comillas dobles
+        '(?:\\.|[^'\\])*'|           # Strings con comillas simples
+        \#.*|                        # Directivas de preprocesador (C++)
+        //.*|                        # Comentarios de una línea
+        /\*.*?\*/|                   # Comentarios multilínea
+        ::|->|<<|>>|&&|\|\||\+\+|\-- # Operadores específicos de C++
     '''
     
-    tokens = re.findall(pattern, code, re.DOTALL | re.VERBOSE)
-    
-    # Filtrar elementos vacíos y aplanar la lista
-    return [token for token in tokens if token.strip()]
+    tokens = re.findall(pattern, code, re.VERBOSE | re.DOTALL)
+    return [token for token in tokens if token and token.strip()]
 
 def build_vocab(code_pairs):
     vocab = set()
