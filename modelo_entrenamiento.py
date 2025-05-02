@@ -2,12 +2,15 @@ import os
 import pandas as pd
 import tensorflow as tf
 from tensorflow.keras import layers, models
-from sklearn.metrics import classification_report, confusion_matrix
+from tensorflow.keras.layers import Subtract
 from sklearn.utils import resample
 import numpy as np
 import random
+import pickle
+from sklearn.metrics import classification_report, confusion_matrix
 import matplotlib.pyplot as plt
 import seaborn as sns
+import re 
 
 BASE_DIR = "conplag_version_2"
 VERSIONS_DIR = os.path.join(BASE_DIR, "versions", "version_2")
@@ -35,7 +38,12 @@ def load_code(s1, s2):
         return "", ""
 
 def simple_tokenizer(code):
-    return code.replace("\n", " ").replace("(", " ").replace(")", " ").replace("{", " ").replace("}", " ").replace(";", " ").split()
+    # Conserva más estructura del código
+    tokens = []
+    for token in code.replace('\n', ' \n ').split():
+        # Separa símbolos pero conserva su identidad
+        tokens.extend([t for t in re.split('([{}();,=+*-/])', token) if t])
+    return tokens
 
 def build_vocab(code_pairs):
     vocab = set()
@@ -54,6 +62,9 @@ print("Cargando pares de prueba...")
 test_codes = [load_code(r.sub1, r.sub2) for _, r in test_df.iterrows()]
 
 token_to_id = build_vocab(train_codes + test_codes)
+
+with open("token_to_id.pkl", "wb") as f:
+    pickle.dump(token_to_id, f)
 
 X_train1 = np.array([encode(c1, token_to_id) for c1, _ in test_codes])  
 X_train2 = np.array([encode(c2, token_to_id) for _, c2 in test_codes])  
@@ -86,7 +97,9 @@ def build_model(vocab_size, embedding_dim=64, input_len=500):
     x1 = pool(conv(embed(input1)))
     x2 = pool(conv(embed(input2)))
 
-    diff = layers.Lambda(lambda tensors: tf.math.abs(tensors[0] - tensors[1]))([x1, x2])
+    diff_raw = Subtract()([x1, x2])
+    diff = tf.keras.layers.Lambda(abs_diff)(diff_raw)
+
     merged = layers.concatenate([x1, x2, diff])
 
     dense = layers.Dense(64, activation="relu")(merged)
@@ -96,57 +109,74 @@ def build_model(vocab_size, embedding_dim=64, input_len=500):
     model.compile(optimizer="adam", loss="binary_crossentropy", metrics=["accuracy"])
     return model
 
+def abs_diff(x):
+    return tf.math.abs(x)
+
 print("Construyendo el modelo...")
 model = build_model(len(token_to_id))
+
+# Mostrar el resumen del modelo
 model.summary()
 
-print("Entrenando...")
+# Entrenar el modelo y guardar el historial
+print("Entrenando el modelo...")
 history = model.fit(
-    [X_train1, X_train2],
-    y_train,
-    batch_size=32,
-    epochs=5,
+    [X_train1, X_train2], 
+    y_train, 
+    batch_size=32, 
+    epochs=5, 
     validation_split=0.1
 )
 
-print("Evaluando...")
-y_pred_probs = model.predict([X_test1, X_test2])
-y_pred = (y_pred_probs >= 0.3).astype(int)
+# Guardar el modelo
+model.save("modelo_plagio.keras")
 
+# Evaluar el modelo
+print("Evaluando el modelo...")
+y_pred_probs = model.predict([X_test1, X_test2])
+y_pred = (y_pred_probs >= 0.5).astype(int)  # Umbral de 0.5
+
+# Reporte de clasificación
+print("\nReporte de Clasificación:")
 print(classification_report(y_test, y_pred))
 
-# Cantidad exacta de predicciones correctas
-correct_preds = np.sum(y_pred.flatten() == y_test)
-print(f"Predicciones correctas: {correct_preds} de {len(y_test)}")
-
-
 # Matriz de confusión
-print("Matriz de confusión:")
+print("\nMatriz de Confusión:")
 cm = confusion_matrix(y_test, y_pred)
-sns.heatmap(cm, annot=True, fmt="d", cmap="Blues", xticklabels=["No Plagio", "Plagio"], yticklabels=["No Plagio", "Plagio"])
+plt.figure(figsize=(6, 6))
+sns.heatmap(cm, annot=True, fmt="d", cmap="Blues", 
+            xticklabels=["No Plagio", "Plagio"], 
+            yticklabels=["No Plagio", "Plagio"])
 plt.xlabel("Predicción")
 plt.ylabel("Real")
 plt.title("Matriz de Confusión")
 plt.show()
 
-# Gráfica de entrenamiento
+# Gráficas de entrenamiento
 plt.figure(figsize=(12, 5))
 
+# Gráfica de precisión
 plt.subplot(1, 2, 1)
-plt.plot(history.history["accuracy"], label="Entrenamiento")
-plt.plot(history.history["val_accuracy"], label="Validación")
-plt.title("Precisión por Época")
-plt.xlabel("Épocas")
-plt.ylabel("Precisión")
-plt.legend()
+plt.plot(history.history['accuracy'], label='Precisión entrenamiento')
+plt.plot(history.history['val_accuracy'], label='Precisión validación')
+plt.title('Precisión del modelo')
+plt.ylabel('Precisión')
+plt.xlabel('Época')
+plt.legend(loc='lower right')
 
+# Gráfica de pérdida
 plt.subplot(1, 2, 2)
-plt.plot(history.history["loss"], label="Entrenamiento")
-plt.plot(history.history["val_loss"], label="Validación")
-plt.title("Pérdida por Época")
-plt.xlabel("Épocas")
-plt.ylabel("Pérdida")
-plt.legend()
+plt.plot(history.history['loss'], label='Pérdida entrenamiento')
+plt.plot(history.history['val_loss'], label='Pérdida validación')
+plt.title('Pérdida del modelo')
+plt.ylabel('Pérdida')
+plt.xlabel('Época')
+plt.legend(loc='upper right')
 
 plt.tight_layout()
 plt.show()
+
+# Cantidad exacta de predicciones correctas
+correct_preds = np.sum(y_pred.flatten() == y_test)
+print(f"\nPredicciones correctas: {correct_preds} de {len(y_test)}")
+print(f"Precisión: {correct_preds/len(y_test):.2%}")
