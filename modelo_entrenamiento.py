@@ -29,7 +29,6 @@ test_df = pd.merge(test_ids, labels_df, on=["sub1", "sub2"])
 
 def load_code(s1, s2):
     folder = f"{s1}_{s2}"
-    # Intentar con diferentes extensiones en orden
     extensions = ['.java', '.py', '.cpp', '.cc', '.cxx']
     
     for ext in extensions:
@@ -44,11 +43,9 @@ def load_code(s1, s2):
     return "", ""
 
 def simple_tokenizer(code):
-    # Tokenizador para Java, Python y C++
     tokens = []
     code = code.replace('\r\n', '\n').replace('\r', '\n')
     
-    # Patrón mejorado para los tres lenguajes
     pattern = r'''
         \b\w+\b|                     # Palabras clave e identificadores
         [][{}()<>.,;:=+*/-]|         # Símbolos
