@@ -2,13 +2,30 @@ import os
 import pickle
 import tensorflow as tf
 import numpy as np
-
 from tensorflow.keras.models import load_model
+import re
 
 FOLDER = "codigos_de_prueba"
 
 def simple_tokenizer(code):
-    return code.replace("\n", " ").replace("(", " ").replace(")", " ").replace("{", " ").replace("}", " ").replace(";", " ").split()
+    # Tokenizador robusto para Java y Python
+    tokens = []
+    code = code.replace('\r\n', '\n').replace('\r', '\n')
+    
+    # Patrón corregido y simplificado
+    pattern = r'''
+        \b\w+\b|                # Palabras
+        [][{}()<>.,;:=+*/-]|    # Símbolos
+        \n|                     # Saltos de línea
+        "(?:\\.|[^"\\])*"|      # Strings con comillas dobles
+        '(?:\\.|[^'\\])*'|      # Strings con comillas simples
+        \#.*|                   # Comentarios Python
+        //.*|                   # Comentarios Java (una línea)
+        /\*.*?\*/               # Comentarios Java (multilínea)
+    '''
+    
+    tokens = re.findall(pattern, code, re.VERBOSE | re.DOTALL)
+    return [token for token in tokens if token.strip()]
 
 def encode(code, token_to_id, maxlen=500):
     ids = [token_to_id.get(tok, 0) for tok in simple_tokenizer(code)]
@@ -22,8 +39,8 @@ model = load_model("modelo_plagio.keras", custom_objects={"abs_diff": abs_diff})
 with open("token_to_id.pkl", "rb") as f:
     token_to_id = pickle.load(f)
 
-# Mostrar archivos disponibles
-archivos = [f for f in os.listdir(FOLDER) if f.endswith(".java")]
+# Mostrar archivos disponibles (Java y Python)
+archivos = [f for f in os.listdir(FOLDER) if f.endswith((".java", ".py"))]
 print("Archivos disponibles:")
 for idx, fname in enumerate(archivos):
     print(f"{idx}: {fname}")

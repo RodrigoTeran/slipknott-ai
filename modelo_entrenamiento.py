@@ -10,7 +10,7 @@ import pickle
 from sklearn.metrics import classification_report, confusion_matrix
 import matplotlib.pyplot as plt
 import seaborn as sns
-import re 
+import re
 
 BASE_DIR = "conplag_version_2"
 VERSIONS_DIR = os.path.join(BASE_DIR, "versions", "version_2")
@@ -29,8 +29,15 @@ test_df = pd.merge(test_ids, labels_df, on=["sub1", "sub2"])
 
 def load_code(s1, s2):
     folder = f"{s1}_{s2}"
+    # Intentar con Java primero
     path1 = os.path.join(VERSIONS_DIR, folder, f"{s1}.java")
     path2 = os.path.join(VERSIONS_DIR, folder, f"{s2}.java")
+    
+    # Si no existe, intentar con Python
+    if not os.path.exists(path1):
+        path1 = os.path.join(VERSIONS_DIR, folder, f"{s1}.py")
+        path2 = os.path.join(VERSIONS_DIR, folder, f"{s2}.py")
+    
     try:
         with open(path1, "r", encoding="utf-8") as f1, open(path2, "r", encoding="utf-8") as f2:
             return f1.read(), f2.read()
@@ -38,12 +45,26 @@ def load_code(s1, s2):
         return "", ""
 
 def simple_tokenizer(code):
-    # Conserva más estructura del código
+    # Tokenizador simplificado y robusto para Java y Python
     tokens = []
-    for token in code.replace('\n', ' \n ').split():
-        # Separa símbolos pero conserva su identidad
-        tokens.extend([t for t in re.split('([{}();,=+*-/])', token) if t])
-    return tokens
+    code = code.replace('\r\n', '\n').replace('\r', '\n')
+    
+    # Patrón corregido y simplificado
+    pattern = r'''
+        \b\w+\b|                # Palabras
+        [][{}()<>.,;:=+*/-]|    # Símbolos
+        \n|                     # Saltos de línea
+        "(?:\\.|[^"\\])*"|      # Strings con comillas dobles
+        '(?:\\.|[^'\\])*'|      # Strings con comillas simples
+        \#.*|                   # Comentarios Python
+        //.*|                   # Comentarios Java (una línea)
+        /\*.*?\*/               # Comentarios Java (multilínea)
+    '''
+    
+    tokens = re.findall(pattern, code, re.DOTALL | re.VERBOSE)
+    
+    # Filtrar elementos vacíos y aplanar la lista
+    return [token for token in tokens if token.strip()]
 
 def build_vocab(code_pairs):
     vocab = set()
