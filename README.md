@@ -2,7 +2,7 @@
 
 ## Detector de Plagio en Código Fuente
 
-Este proyecto utiliza una red neuronal en TensorFlow para detectar similitud potencialmente plagiada entre pares de archivos de código en varios lenguajes (Python, C++, Java, etc.).
+Este proyecto utiliza una red neuronal para detectar similitud potencialmente plagiada entre pares de archivos de código en varios lenguajes (Python, C++, Java, etc.).
 
 ## Cómo correr el entrenamiento
 
