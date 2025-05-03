@@ -1,8 +1,8 @@
 import os
 import pandas as pd
 import tensorflow as tf
-from tensorflow.keras import layers, models
-from tensorflow.keras.layers import Subtract
+from tensorflow.keras import layers, models # type: ignore
+from tensorflow.keras.layers import Subtract # type: ignore
 from sklearn.utils import resample
 import numpy as np
 import random
